@@ -19,7 +19,7 @@ date: 2017-10-24
 ## Basic knowledge about text encoding
 
 - How is text translated into bytes?
-- Unicode
+- ASCII and Unicode
 
 
 ## Knowledge of basics of markup processing
