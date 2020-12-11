@@ -9,92 +9,129 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="reveal.js/css/reveal.css">
-  <style type="text/css">code{white-space: pre;}</style>
-  <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
-  <!-- Printing and PDF exports -->
-  <script>
-    var link = document.createElement( 'link' );
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
-    document.getElementsByTagName( 'head' )[0].appendChild( link );
-  </script>
-  <!--[if lt IE 9]>
-  <script src="reveal.js/lib/js/html5shiv.js"></script>
-  <![endif]-->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@^4//dist/theme/white.css" id="theme">
 </head>
 <body>
   <div class="reveal">
     <div class="slides">
 
-<section>
+<section id="title-slide">
   <h1 class="title">Markup - why and how</h1>
   <p class="author">Heinz Wittenbrink</p>
   <p class="date">2017-10-24</p>
 </section>
 
-<section><section id="goals-of-the-session" class="titleslide slide level1"><h1>Goals of the session</h1></section><section id="understanding-how-digital-text-content-is-stored-and-processed" class="slide level2">
+<section>
+<section id="goals-of-the-session" class="title-slide slide level1">
+<h1>Goals of the session</h1>
+
+</section>
+<section id="understanding-how-digital-text-content-is-stored-and-processed" class="slide level2">
 <h2>Understanding how digital (text) content is stored and processed</h2>
-</section><section id="knowledge-of-basic-characteristics-of-markup-languages" class="slide level2">
+</section>
+<section id="knowledge-of-basic-characteristics-of-markup-languages" class="slide level2">
 <h2>Knowledge of basic characteristics of markup languages</h2>
 <ul>
 <li>Descriptive Markup</li>
 <li>Difference of text and markup</li>
 </ul>
-</section><section id="basic-knowledge-about-text-encoding" class="slide level2">
+</section>
+<section id="basic-knowledge-about-text-encoding" class="slide level2">
 <h2>Basic knowledge about text encoding</h2>
 <ul>
 <li>How is text translated into bytes?</li>
-<li>Unicode</li>
+<li>ASCII and Unicode</li>
 </ul>
-</section><section id="knowledge-of-basics-of-markup-processing" class="slide level2">
+</section>
+<section id="knowledge-of-basics-of-markup-processing" class="slide level2">
 <h2>Knowledge of basics of markup processing</h2>
 <ul>
 <li>What is parsing?</li>
 <li>Document Object Model</li>
 </ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 </section></section>
-<section><section id="descriptive-markup" class="titleslide slide level1"><h1>Descriptive Markup</h1></section><section id="essentials" class="slide level2">
+<section>
+<section id="descriptive-markup" class="title-slide slide level1">
+<h1>Descriptive Markup</h1>
+
+</section>
+<section id="essentials" class="slide level2">
 <h2>Essentials</h2>
 <ul>
 <li>Digital content is mostly stored as marked up text.</li>
@@ -102,135 +139,169 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li>The standardized markup is the base of the processing of the text by software.</li>
 <li>How software processes the text depends largely on the quality of the markup.</li>
 </ul>
-</section><section id="markup-before-the-digital-age" class="slide level2">
+</section>
+<section id="markup-before-the-digital-age" class="slide level2">
 <h2>Markup before the digital age</h2>
 <blockquote>
-<p>The idea and terminology evolved from the &quot;marking up&quot; of paper manuscripts, i.e., the revision instructions by editors, traditionally written with a blue pencil on authors' manuscripts.</p>
+<p>The idea and terminology evolved from the “marking up” of paper manuscripts, i.e., the revision instructions by editors, traditionally written with a blue pencil on authors’ manuscripts.</p>
 </blockquote>
 <p><a href="https://en.wikipedia.org/wiki/Markup_language">Markup language - Wikipedia</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img src="https://www.ncbi.nlm.nih.gov/staff/beck/xml/markup/sample.gif" alt="Example for Markup" /><figcaption>Example for Markup</figcaption>
+<img data-src="https://www.ncbi.nlm.nih.gov/staff/beck/xml/markup/sample.gif" alt="Example for Markup" /><figcaption aria-hidden="true">Example for Markup</figcaption>
 </figure>
 <p>Source: <a href="https://www.ncbi.nlm.nih.gov/staff/beck/xml/markup/I-A.html">Markup is</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
-<div class="sourceCode"><pre class="sourceCode html"><code class="sourceCode html">
-<span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
-
-<span class="kw">&lt;html&gt;</span>
-
-    <span class="kw">&lt;head&gt;</span>
-
-        <span class="kw">&lt;title&gt;</span>Sample Manuscripts<span class="kw">&lt;/title&gt;</span>
-
-        <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span>
-
-        h1 <span class="kw">{font-family:</span> Helvetica, <span class="dt">sans-serif</span><span class="kw">;</span> <span class="kw">font-size:</span> <span class="dt">16</span><span class="kw">}</span>
-
-        p <span class="kw">{font-family:</span> Times-Roman, <span class="dt">serif</span><span class="kw">;</span> <span class="kw">font-size:</span> <span class="dt">16</span><span class="kw">}</span>
-
-        <span class="kw">&lt;/style&gt;</span>
-
-    <span class="kw">&lt;/head&gt;</span>
-
-    <span class="kw">&lt;body&gt;</span>
-
-        <span class="kw">&lt;h1&gt;</span>Sample Manuscripts throughout the Ages<span class="kw">&lt;/h1&gt;</span>
-
-        <span class="kw">&lt;p&gt;</span>The funny thing about sample manuscripts is that they never say anything really interesting.<span class="kw">&lt;/p&gt;</span>
-
-    <span class="kw">&lt;/body&gt;</span>
-
-<span class="kw">&lt;/html&gt;</span></code></pre></div>
-</section><section id="procedural-vs.-descriptive-markup" class="slide level2">
-<h2>Procedural vs. descriptive markup</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="kw">&lt;html&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a>    <span class="kw">&lt;head&gt;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true"></a>        <span class="kw">&lt;title&gt;</span>Sample Manuscripts<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true"></a>        <span class="kw">&lt;style</span><span class="ot"> type=</span><span class="st">&quot;text/css&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true"></a>        h1 {<span class="kw">font-family</span>: Helvetica<span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span> <span class="kw">font-size</span>: <span class="dv">16</span>}</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true"></a>        p {<span class="kw">font-family</span>: Times-Roman<span class="op">,</span> <span class="dv">serif</span><span class="op">;</span> <span class="kw">font-size</span>: <span class="dv">16</span>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true"></a>        <span class="kw">&lt;/style&gt;</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true"></a>    <span class="kw">&lt;/head&gt;</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true"></a>    <span class="kw">&lt;body&gt;</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true"></a>        <span class="kw">&lt;h1&gt;</span>Sample Manuscripts throughout the Ages<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true"></a>        <span class="kw">&lt;p&gt;</span>The funny thing about sample manuscripts is that they never say anything really interesting.<span class="kw">&lt;/p&gt;</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true"></a>    <span class="kw">&lt;/body&gt;</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+</section>
+<section id="procedural-vs.-descriptive-markup" class="slide level2">
+<h2>Procedural vs. descriptive markup</h2>
 <ul>
 <li>Control of defined applications by <strong>procedural markup</strong>: Defines the state of processing applications</li>
 <li><strong>Descriptive markup</strong>: Describes text and leaves the processing to the application</li>
 </ul>
-</section><section id="example-pcl" class="slide level2">
+</section>
+<section id="example-pcl" class="slide level2">
 <h2>Example PCL</h2>
 <pre><code>
 Ec(s0Saufrechter Text Ec(s1Skursiv gesetzter Text
 </code></pre>
-</section><section id="how-does-a-computer-distinguish-text-and-markup" class="slide level2">
+</section>
+<section id="how-does-a-computer-distinguish-text-and-markup" class="slide level2">
 <h2>How does a computer distinguish text and markup?</h2>
 <ul>
 <li>Markup delimiters in HTML and XML: <code>&lt;</code>, <code>&gt;</code>,</li>
 <li>Markup delimiters for Entities: <code>&amp;</code>, <code>;</code>(referencing special characters, escaping the literal values of &lt; and &gt;</li>
 <li>Possible markup delimiters in SGML: <code>[</code>, <code>]</code>, <code>{</code>, <code>}</code></li>
 </ul>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 </section></section>
-<section><section id="encoding-transforming-text-into-bytes" class="titleslide slide level1"><h1>Encoding: Transforming text into bytes</h1></section><section class="slide level2">
+<section>
+<section id="encoding-transforming-text-into-bytes" class="title-slide slide level1">
+<h1>Encoding: Transforming text into bytes</h1>
+
+</section>
+<section class="slide level2">
 
 <figure>
-<img src="http://www.asciitable.com/index/asciifull.gif" alt="ASCII Table and Description" /><figcaption>ASCII Table and Description</figcaption>
+<img data-src="http://www.asciitable.com/index/asciifull.gif" alt="ASCII Table and Description" /><figcaption aria-hidden="true">ASCII Table and Description</figcaption>
 </figure>
 <p>Source: <a href="http://www.asciitable.com/" title="Ascii Table - ASCII character codes and html, octal, hex and decimal chart conversion">Ascii Table - ASCII character codes and html, octal, hex and decimal chart conversion</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img src="http://www.asciitable.com/index/extend.gif" alt="Extended ASCII Codes" /><figcaption>Extended ASCII Codes</figcaption>
+<img data-src="http://www.asciitable.com/index/extend.gif" alt="Extended ASCII Codes" /><figcaption aria-hidden="true">Extended ASCII Codes</figcaption>
 </figure>
 <p>Source: <a href="http://www.asciitable.com/" title="Ascii Table - ASCII character codes and html, octal, hex and decimal chart conversion">Ascii Table - ASCII character codes and html, octal, hex and decimal chart conversion</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<embed src="https://qph.ec.quoracdn.net/main-qimg-1f98a83f3ffcb47b816497a356aeebac.webp" /><figcaption>Unicode</figcaption>
+<img data-src="https://qph.ec.quoracdn.net/main-qimg-1f98a83f3ffcb47b816497a356aeebac.webp" alt="Unicode" /><figcaption aria-hidden="true">Unicode</figcaption>
 </figure>
 <p>Source: <a href="https://www.quora.com/How-does-unicode-SMS-Works" title="(4) How does unicode SMS Works? - Quora">How does unicode SMS Works? - Quora</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img src="http://www.edc4it.com/images/blog/UTF8-encoding-example.gif" alt="UTF8-Encoding" /><figcaption>UTF8-Encoding</figcaption>
+<img data-src="http://www.edc4it.com/images/blog/UTF8-encoding-example.gif" alt="UTF8-Encoding" /><figcaption aria-hidden="true">UTF8-Encoding</figcaption>
 </figure>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 </section></section>
-<section><section id="parsing-how-a-computer-reads-text" class="titleslide slide level1"><h1>Parsing: How a computer reads text</h1></section><section class="slide level2">
+<section>
+<section id="parsing-how-a-computer-reads-text" class="title-slide slide level1">
+<h1>Parsing: How a computer reads text</h1>
+
+</section>
+<section class="slide level2">
 
 <p>Parsing (US: /ˈpɑːrsɪŋ/; UK: /ˈpɑːzɪŋ/), syntax analysis or syntactic analysis is the process of analysing a string of symbols, either in natural language or in computer languages, conforming to the rules of a formal grammar. The term parsing comes from Latin pars (orationis), meaning part (of speech).</p>
 <p><a href="https://en.wikipedia.org/wiki/Parsing#cite_ref-1" title="Parsing - Wikipedia">Parsing - Wikipedia</a></p>
-</section><section class="slide level2">
+</section>
+<section class="slide level2">
 
 <figure>
-<img src="http://www3.ntu.edu.sg/home/ehchua/programming/java/images/XML_SaxParser.png" alt="SAX Parser" /><figcaption>SAX Parser</figcaption>
+<img data-src="http://www3.ntu.edu.sg/home/ehchua/programming/java/images/XML_SaxParser.png" alt="SAX Parser" /><figcaption aria-hidden="true">SAX Parser</figcaption>
 </figure>
 <figure>
-<img src="http://www3.ntu.edu.sg/home/ehchua/programming/java/images/XML_DomParser.png" alt="DOM Parser" /><figcaption>DOM Parser</figcaption>
+<img data-src="http://www3.ntu.edu.sg/home/ehchua/programming/java/images/XML_DomParser.png" alt="DOM Parser" /><figcaption aria-hidden="true">DOM Parser</figcaption>
 </figure>
-<p>Quelle: <a href="http://codingbasics.blogspot.co.at/2011/01/parse-xml-with-java-sax-and-dom-parser.html" title="The Developer&#39;s Digest - Spend your day here.: Parse XML with Java - SAX and DOM parser">The Developer's Digest - Spend your day here.: Parse XML with Java - SAX and DOM parser</a></p>
+<p>Quelle: <a href="http://codingbasics.blogspot.co.at/2011/01/parse-xml-with-java-sax-and-dom-parser.html" title="The Developer&#39;s Digest - Spend your day here.: Parse XML with Java - SAX and DOM parser">The Developer’s Digest - Spend your day here.: Parse XML with Java - SAX and DOM parser</a></p>
 </section></section>
-<section><section id="the-dom-a-technical-model-for-digital-infomation" class="titleslide slide level1"><h1>The DOM: A technical model for digital infomation</h1></section><section class="slide level2">
+<section>
+<section id="the-dom-a-technical-model-for-digital-infomation" class="title-slide slide level1">
+<h1>The DOM: A technical model for digital infomation</h1>
+
+</section>
+<section class="slide level2">
 
 <figure>
-<img src="http://www3.ntu.edu.sg/home/ehchua/programming/java/images/XML_RomTree.png" alt="DOM Tree" /><figcaption>DOM Tree</figcaption>
+<img data-src="http://www3.ntu.edu.sg/home/ehchua/programming/java/images/XML_RomTree.png" alt="DOM Tree" /><figcaption aria-hidden="true">DOM Tree</figcaption>
 </figure>
-</section><section id="rendering-of-an-html-page" class="slide level2">
+</section>
+<section id="rendering-of-an-html-page" class="slide level2">
 <h2>Rendering of an HTML page</h2>
-<p><a href="https://youtu.be/n1cKlKM3jYI"><img src="pics/rendering-intro.png" alt="An introduction to browser rendering" /></a></p>
+<p><a href="https://youtu.be/n1cKlKM3jYI"><img data-src="pics/rendering-intro.png" alt="An introduction to browser rendering" /></a></p>
 </section></section>
     </div>
   </div>
 
-  <script src="reveal.js/lib/js/head.min.js"></script>
-  <script src="reveal.js/js/reveal.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//dist/reveal.js"></script>
+
+  // reveal.js plugins
+  <script src="https://unpkg.com/reveal.js@^4//plugin/notes/notes.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/search/search.js"></script>
+  <script src="https://unpkg.com/reveal.js@^4//plugin/zoom/zoom.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
-      // https://github.com/hakimel/reveal.js#configuration
+      // https://revealjs.com/config/
       Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
 
-        // Optional reveal.js plugins
-        dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
-              { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        // reveal.js plugins
+        plugins: [
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
         ]
       });
     </script>
